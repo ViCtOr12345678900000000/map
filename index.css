@@ -1,0 +1,253 @@
+/* src/index.css */
+body {
+  margin: 1;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow: hidden;
+  font-family: 'Old Standard TT', serif;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+/* Ensure the sidebar starts hidden */
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 150px;
+  background: white;
+  z-index: 10;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+
+  /* This hides it off-screen to the left */
+  transform: translateX(-110%);
+  transition: transform 0.3s ease;
+}
+
+/* This shows it when state is true */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* Ensure the main container is a flex container */
+.main-content {
+  display: flex;
+  font-size: 11px;
+  position: relative;
+  height: calc(100vh - 60px); /* Adjust based on your navbar height */
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.nav-item:hover {
+  background: #cad6ee;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #cbd5e1;
+  background: #f1f5f9;
+}
+
+.sign-in-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button {
+  font-family: 'Old Standard TT', serif;
+}
+button:hover {
+  cursor: pointer;
+  background: #cad6ee;
+}
+.sidebar-content1 {
+  margin-top: 40vh;
+}
+
+/* Global Dark Mode Styles */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .sidebar {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.dark-mode .navbar {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #333;
+}
+/* Container for the 3 parts */
+/* Container for the 3 parts */
+.layout-row {
+  display: flex;
+  height: calc(100vh - 60px); /* Fill screen minus Navbar */
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-top: 5vh;
+}
+
+/* Sidebar: Set to maintain width and push content */
+.sidebar {
+  flex-shrink: 0; /* Prevents squishing */
+  width: 0; /* Starts closed */
+  transition: width 0.3s ease;
+  background: white;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.sidebar.open {
+  width: 250px; /* Expands to set width, pushing Map and Info Panel */
+}
+
+/* Map: Takes the remaining available space */
+.map-container {
+  flex: 1; /* Grows to fill center */
+  background: #e5e7eb;
+  transition: all 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Info Panel: Third column on the right */
+.info-panel {
+  flex-shrink: 0;
+  width: 300px;
+  background: white;
+  border-left: 1px solid #ddd;
+
+  /* These three lines enable scrolling */
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding: 20px;
+}
+/* Dark Mode logic for all 3 parts */
+.dark-mode .sidebar,
+.dark-mode .info-panel {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.dark-mode .map-container {
+  background-color: #0f0f0f;
+}
+
+.first {
+  width: 100vw;
+  
+  height: 50vh;
+}
+.img-cnt {
+  border-radius: 5px;
+}
+.second {
+  width: 100vw;
+  background-color: orange;
+  height: 50vh;
+}
+.third {
+  width: 100vw;
+  background-color: blue;
+  height: 50vh;
+}
+.cover-container {
+  row-gap: 20px;
+}
+
+/*responsivity*/
+@media screen and (min-width: 896px) and (max-width: 1024px) {
+  .sidebar-content1 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .map-and-info {
+    display: flex;
+    margin-top: -93vh;
+    border-radius: 50px;
+  }
+  .layout-row {
+    display: flex;
+    height: calc(100vh - 60px); /* Fill screen minus Navbar */
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 6vh;
+  }
+}
+
+/* Targets portrait screens from iPhone XR up to iPad */
+@media screen and (max-height: 1200px) and (orientation: portrait) {
+  .sidebar-content1 {
+    margin-top: 40vh;
+  }
+  .info-panel {
+    display: block;
+    width: fit-content;
+  }
+  .navbar {
+    display: grid;
+    grid-gap: 30px;
+  }
+  .navbar,
+  h2 {
+    justify-content: center;
+  }
+  .navbar-content {
+    margin-bottom: 10px;
+  }
+  .info-text {
+    margin-bottom: 20vh;
+  }
+  .info-panel-content {
+    height: 75vh; /* Constrains height so overflow can scroll */
+    overflow-y: auto; /* Enables smooth vertical scrolling */
+    -webkit-overflow-scrolling: touch; /* Ensures smooth touch scrolling on iOS */
+  }
+  .map-and-info {
+    display: block;
+    overflow: scroll;
+    margin-top: -95vh;
+    justify-content: center;
+  }
+
+  body {
+    overflow: scroll;
+  }
+  .layout-row,
+  .sidebar {
+    margin-top: -vh;
+  }
+}
