@@ -7,7 +7,7 @@ import Contribute from './contribute.png';
 import Setting from './setting.png';
 import Help from './help.png';
 import DarkMode from './dark-mode.png';
-
+ 
 const Sidebar = ({ isOpen, isDarkMode, toggleDarkMode }) => {
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
