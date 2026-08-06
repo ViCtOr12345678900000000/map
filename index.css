@@ -10,7 +10,12 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background: white;
+  background: radial-gradient(
+    circle at 50% 0%, 
+    rgba(224, 242, 254, 0.5) 0%, 
+    rgba(248, 250, 252, 1) 70%, 
+    #ffffff 100%
+  );
   border-bottom: 1px solid #ddd;
   justify-content: space-between;
   border-radius: 10px;
@@ -23,12 +28,7 @@ body {
   left: 0;
   height: 100%;
   width: 150px;
-  background: radial-gradient(
-    circle at 50% 0%, 
-    rgba(224, 242, 254, 0.5) 0%, 
-    rgba(248, 250, 252, 1) 70%, 
-    #ffffff 100%
-  );
+  background: white;
   z-index: 10;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 
@@ -152,7 +152,12 @@ button:hover {
 .info-panel {
   flex-shrink: 0;
   width: 300px;
-  background: white;
+  background: radial-gradient(
+    circle at 50% 0%, 
+    rgba(224, 242, 254, 0.5) 0%, 
+    rgba(248, 250, 252, 1) 70%, 
+    #ffffff 100%
+  );
   border-left: 1px solid #ddd;
 
   /* These three lines enable scrolling */
@@ -256,7 +261,9 @@ button:hover {
     rgba(248, 250, 252, 1) 70%, 
     #ffffff 100%
   );
+  
   }
+  
   .navbar,
   h2 {
     justify-content: center;
