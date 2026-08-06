@@ -188,13 +188,16 @@ button:hover {
 }
 
 /*responsivity*/
-@media screen and (min-width: 896px) and (max-width: 1024px) {
+@media screen and (min-width: 700px) and (max-width: 1024px) {
   .sidebar-content1 {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .rating {
     margin-bottom: 350px;
    
+  }
+  .sidebar{
+    font-size: 12px;
   }
 }
 
