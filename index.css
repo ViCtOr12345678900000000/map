@@ -30,6 +30,7 @@ body {
   /* This hides it off-screen to the left */
   transform: translateX(-110%);
   transition: transform 0.3s ease;
+  margin-left: 8px;
 }
 
 /* This shows it when state is true */
@@ -131,6 +132,7 @@ button:hover {
 
 .sidebar.open {
   width: 250px; /* Expands to set width, pushing Map and Info Panel */
+  margin-left: ;
 }
 
 /* Map: Takes the remaining available space */
@@ -198,7 +200,9 @@ button:hover {
   }
   .sidebar{
     font-size: 12px;
+    
   }
+  
 }
 
 @media screen and (orientation: landscape) {
@@ -221,6 +225,7 @@ button:hover {
   margin-top: -40px;
 
 }
+
 
 }
 
