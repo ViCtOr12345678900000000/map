@@ -1,5 +1,5 @@
 
-
+import React from 'react';
 import Direction from './direction.png'
 // Info.tsx
 export default function Info() {

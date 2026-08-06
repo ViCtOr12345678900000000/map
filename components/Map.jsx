@@ -1,3 +1,4 @@
+import React from 'react';
 const Map = () => {
   return (
     <div className="map-container" style={{ width: '100%', height: '100%' }}>

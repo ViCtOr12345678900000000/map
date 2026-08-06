@@ -1,5 +1,5 @@
 // Sidebar.tsx
-import React from 'react';
+
 import Explore from './explore.png';
 import Direction from './direction.png';
 import Recent from './recent.png';

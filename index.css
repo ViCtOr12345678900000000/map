@@ -17,8 +17,9 @@ body {
 }
 /* Ensure the sidebar starts hidden */
 .sidebar {
-  position: relative;
-  top: 0;
+  position: fixed;
+  top: ;
+  margin-top: -150px;
   left: 0;
   height: 100%;
   width: 150px;
@@ -34,6 +35,7 @@ body {
 /* This shows it when state is true */
 .sidebar.open {
   transform: translateX(0);
+  
 }
 
 /* Ensure the main container is a flex container */
@@ -190,6 +192,10 @@ button:hover {
   .sidebar-content1 {
     margin-top: 20px;
   }
+  .rating {
+    margin-bottom: 350px;
+   
+  }
 }
 
 @media screen and (orientation: landscape) {
@@ -206,24 +212,37 @@ button:hover {
     transition: all 0.3s ease;
     margin-top: 6vh;
   }
+  .sidebar {
+  position: fixed;
+  
+  margin-top: -40px;
+
+}
+
 }
 
 /* Targets portrait screens from iPhone XR up to iPad */
 @media screen and (max-height: 1200px) and (orientation: portrait) {
   .sidebar-content1 {
-    margin-top: 40vh;
+    margin-top: 50vh;
   }
   .info-panel {
     display: block;
     width: fit-content;
+   
   }
   .navbar {
     display: grid;
     grid-gap: 30px;
+    top: 0;
+    position: sticky;
+    z-index: 1;
   }
   .navbar,
   h2 {
     justify-content: center;
+    
+
   }
   .navbar-content {
     margin-bottom: 10px;
@@ -244,7 +263,8 @@ button:hover {
   }
 
   body {
-    overflow: scroll;
+    overflow:scroll  ;
+    
   }
   .layout-row,
   .sidebar {

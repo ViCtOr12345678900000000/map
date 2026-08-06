@@ -1,3 +1,4 @@
+import React from 'react';
 import User from './user.png';
 import Map from './map.png';
 import Traffic from './traffic.png';
